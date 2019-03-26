@@ -1,0 +1,3 @@
+
+
+int pedirEntero(char []);

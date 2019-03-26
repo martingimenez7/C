@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1553614007 source:c:\users\alumno\desktop\c4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"BibliotecaIngreso.h"
+
+1553614007 c:\users\alumno\desktop\c4\bibliotecaingreso.h
+
+1553614095 source:c:\users\alumno\desktop\c4\bibliotecaingreso.c
+	<stdio.h>
+	<stdlib.h>
+	"BibliotecaIngreso.h"
+
