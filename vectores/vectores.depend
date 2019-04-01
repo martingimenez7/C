@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1554131074 source:d:\gitgim\c\vectores\main.c
+	<stdio.h>
+	<stdlib.h>
+	"vector.h"
+
+1554130109 d:\gitgim\c\vectores\vector.h
+
+1554131242 source:d:\gitgim\c\vectores\vector.c
+	<stdio.h>
+	<stdlib.h>
+	"vector.h"
+
