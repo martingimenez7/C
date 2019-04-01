@@ -1,82 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "bibliotecaA.h"
 
-int suma(int, int);
-int resta(int, int);
-float division(int, int);
-int multiplicacion(int, int);
-int factorial(int);
-
-void main(void)
+int main()
 {
-  int a,b,s,r,d,m,f;
+  int a,b,s,r,d,m,f,opcion;
 
-  printf("ingrese numero : ");
-  scanf("%d",&a);
+  do{
 
-  printf("ingrese otro numero : ");
-  scanf("%d",&b);
+       printf("1.calcular la suma \n2.calcular resta \n3.calcular division \n4.calcular multiplicacion \n5.calcular el factorial \n6.salir \nintroduzca una opcion: ");
+       scanf("%d", & opcion);
 
-  s = suma(a,b);
-  printf("el resultado de a+b es %d",s);
+     switch(opcion)
+     {
+       case 1:
+            printf("\ningrese numero(A) : ");
+            scanf("%d",&a);
+            printf("ingrese otro numero(B) : ");
+            scanf("%d",&b);
 
-  r = resta(a,b);
-  printf("\nel resultado de a-b es %d",r);
+            s = suma(a,b);
+            printf("el resultado de A+B es %d\n",s);
+       break;
+       case 2:
+            printf("\ningrese numero(A) : ");
+            scanf("%d",&a);
+            printf("ingrese otro numero(B) : ");
+            scanf("%d",&b);
 
-  d = division(a,b);
-  printf("\nel resultado de a/b %d", d);
+            r = resta(a,b);
+            printf("\nel resultado de A-B es %d\n",r);
+       break;
+       case 3:
+            printf("\ningrese numero(A) : ");
+            scanf("%d",&a);
+            printf("ingrese otro numero(B) : ");
+            scanf("%d",&b);
 
-  m = multiplicacion(a,b);
-  printf("\nel resultado de a*b %d", m);
+            d = division(a,b);
+            printf("\nel resultado de A/B %d\n", d);
+       break;
+       case 4:
+            printf("\ningrese numero(A) : ");
+            scanf("%d",&a);
+            printf("ingrese otro numero(B) : ");
+            scanf("%d",&b);
 
-  f = factorial(a);
-  printf("\nel factorial de a es %d", f);
-}
-int suma(int a, int b)
-{
-  int total;
+            m = multiplicacion(a,b);
+            printf("\nel resultado de A*B %d?n", m);
+       break;
+       case 5:
+            printf("\ningrese numero(A) : ");
+            scanf("%d",&a);
 
-  total= a + b;
+            f = factorial(a);
+            printf(" \nel factorial de A es %d\n", f);
+       break;
+       case 6:
+            printf("saiendo del menu...\n");
+       break;
 
-  return total;
-}
-
-int resta(int a, int b)
-{
-    int total;
-
-    total = a - b;
-
-    return total;
-}
-
-float division(int a, int b)
-{
-    int total;
-
-    total = a / b;
-
-    return total;
-}
-
-int multiplicacion(int a,int b)
-{
-    int total;
-
-    total = a * b;
-
-    return total;
-}
-
-int factorial(int a)
-{
-    int total;
-
-    if(a == 0 || a == 1){
-        total = 1;
-    }else{
-           total = a * factorial(a - 1);
-         }
-
-    return total;
+     }
+   }while(opcion>=6);
+    system("pause");
+    system("cls");
+  return 0;
 }
