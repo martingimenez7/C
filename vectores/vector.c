@@ -46,18 +46,15 @@ int numeroMax(int numeros[],int tam)
 
 int valor(int numeros[],int tam,int indice)
 {
-    int flag=0;
     int i;
 
     for(i=0;i<tam;i++)
     {
-        if(tam==numeros[i]){
-            printf("se encontro el numero %d ", indice-1);
-            flag=1;
+        if(numeros[i]==indice){
+            indice=i;
+            break;
         }
     }
-    if(flag==0){
-         printf("el numero no se encontro %d ", indice);
-    }
+
     return indice;
 }

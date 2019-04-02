@@ -20,7 +20,11 @@ int main()
     scanf("%d", &indice);
 
     indice = valor(numeros, T, indice);
-    printf("%d", indice);
+    if(indice>=0){
+       printf("el indice del valor es: %d", indice);
+    }else{
+       printf("el valor ingresado no se encontro %d", indice);
+    }
 
     return 0;
 }
