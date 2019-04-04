@@ -4,65 +4,59 @@
 
 int main()
 {
-  int a,b,s,r,d,m,f,opcion;
+  int a,b,opcion;
 
   do{
 
-       printf("1.calcular la suma \n2.calcular resta \n3.calcular division \n4.calcular multiplicacion \n5.calcular el factorial \n6.salir \nintroduzca una opcion: ");
-       scanf("%d", & opcion);
+     printf("   CALCULADORA  \n 1.Calcular la suma \n 2.Calcular resta \n 3.Calcular division \n 4.Calcular multiplicacion \n 5.Calcular el factorial \n 6.Salir \n\n Introduzca una opcion: ");
+     scanf("%d", & opcion);
 
      switch(opcion)
      {
        case 1:
-            printf("\ningrese numero(A) : ");
+            printf("\n Ingrese numero(A): ");
             scanf("%d",&a);
-            printf("ingrese otro numero(B) : ");
+            printf(" Ingrese otro numero(B): ");
             scanf("%d",&b);
-
-            s = suma(a,b);
-            printf("el resultado de A+B es %d\n",s);
+            suma(a,b);
        break;
        case 2:
-            printf("\ningrese numero(A) : ");
+            printf("\n Ingrese numero(A): ");
             scanf("%d",&a);
-            printf("ingrese otro numero(B) : ");
+            printf(" Ingrese otro numero(B): ");
             scanf("%d",&b);
-
-            r = resta(a,b);
-            printf("\nel resultado de A-B es %d\n",r);
+            resta(a,b);
        break;
        case 3:
-            printf("\ningrese numero(A) : ");
+            printf("\n Ingrese numero(A): ");
             scanf("%d",&a);
-            printf("ingrese otro numero(B) : ");
+            printf(" Ingrese otro numero(B): ");
             scanf("%d",&b);
-
-            d = division(a,b);
-            printf("\nel resultado de A/B %d\n", d);
+            division(a,b);
        break;
        case 4:
-            printf("\ningrese numero(A) : ");
+            printf("\n Ingrese numero(A): ");
             scanf("%d",&a);
-            printf("ingrese otro numero(B) : ");
+            printf(" Ingrese otro numero(B): ");
             scanf("%d",&b);
-
-            m = multiplicacion(a,b);
-            printf("\nel resultado de A*B %d?n", m);
+            multiplicacion(a,b);
        break;
        case 5:
-            printf("\ningrese numero(A) : ");
+            printf("\n Ingrese numero(A): ");
             scanf("%d",&a);
-
-            f = factorial(a);
-            printf(" \nel factorial de A es %d\n", f);
+            factorial(a);
        break;
        case 6:
-            printf("saiendo del menu...\n");
+            printf(" Saiendo...\n");
+            return 7;
        break;
 
+       default:
+            printf(" Opcion no valida\n");
+       break;
      }
    }while(opcion>=6);
+
     system("pause");
     system("cls");
-  return 0;
 }
