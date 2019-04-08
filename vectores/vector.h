@@ -34,3 +34,11 @@ int numeroMax(int[],int);
  *
  */
 int valor(int[], int, int);
+/** \brief
+ *
+ * \param int[]
+ * \param int
+ * \return void
+ *
+ */
+void ordenarVector(int[], int);
