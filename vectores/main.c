@@ -5,13 +5,14 @@
 
 int main()
 {
+    int valores[10]={1,4,2,3,5,6,8,7,9,10};
     int numeros[T];
     int maximo;
     int indice;
 
     pedirVector(numeros , T);
 
-    mostrarVector(numeros, T);
+    //mostrarVector(numeros, T);
 
     maximo = numeroMax(numeros, T);
     printf("el numero max es: %d", maximo);
@@ -25,6 +26,9 @@ int main()
     }else{
        printf("el valor ingresado no se encontro %d", indice);
     }
+
+    ordenarVector(valores,10);
+    mostrarVector(valores, 10);
 
     return 0;
 }
