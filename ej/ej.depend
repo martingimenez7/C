@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1554814685 source:d:\mgg\c\ej\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-

@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1554814685 source:d:\mgg\c\ej\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1554846394 source:c:\users\marti\documents\github\c\ej\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1554848710 source:c:\users\marti\documents\github\c\cadenas\ejnombreapellido\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

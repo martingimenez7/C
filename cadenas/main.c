@@ -4,13 +4,13 @@
 
 int main()
 {
-  char palabra[77] = "lala";
-  char palabra1[77] = "hola";
+  char palabra[77];
+  char palabra1[77];
   int comp;
   int len;
 
   printf(" ingrese nombre y apellido:\n\n ");
-  //gets(palabra);
+  gets(palabra);
   //scanf("%s", palabra);
   //scanf("%[^\n]", palabra);
   //fgets(palabra,177,stdin);
@@ -19,7 +19,7 @@ int main()
   //comp = stricmp(palabra,"Lala");// " y diferencia mayusculas
   printf(" %d\n\n", comp);
 
-  strupr(palabra);
+  strupr(palabra);//pasa palabra a mayuscula
   printf(" %s\n\n",palabra);
 
   strcpy(palabra/*,"hola"*/,palabra1);//copia que se puede desbordar
@@ -28,7 +28,7 @@ int main()
 
   len = strlen(palabra);//cuenta caracteres
 
-  strcat(palabra1,palabra);
+  strcat(palabra1,palabra);//concatena palabras
   printf(" %s\n\n", palabra1);
 
   printf("\n la palabra es %s\n cantidad de caracteres es %d\n",palabra,len);
