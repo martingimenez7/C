@@ -17,11 +17,11 @@ typedef struct //define tipo de dato
 }eEmpleado;
 
 void ingresarEmpleado(eEmpleado[],int);
-void mostrarEmpleado(eEmpleado);
-void mostarTodosLosEmpleados(eEmpleado,int);
+void mostrarEmpleado(eEmpleado[],int);
+void mostarTodosLosEmpleados(eEmpleado);
 
+void inicializarEmpleado(eEmpleado[],int,int);
 int buscarLibre(eEmpleado[],int);
-void inicializarEmpleado(eEmpleado[],int);
 
 int buscarUno(eEmpleado,int,int);//indice o -1
 int borrarUno(eEmpleado,int,int);
@@ -30,24 +30,19 @@ int main()
 {
     eEmpleado unEmpleado;
     eEmpleado lista[T];
-    int indice;
+   // int indice;
 
     ingresarEmpleado(lista,T);
-    inicializarEmpleado(lista,T);
+   // inicializarEmpleado(lista,T);
     //mostrarEmpleado(unEmpleado);
-    indice = buscarLibre(lista,T);
-    lista[indice] = unEmpleado;
+    //indice = buscarLibre(lista,T);
+    //lista[indice] = unEmpleado;
 
-    mostarTodosLosEmpleados(unEmpleado,T);
+    mostarTodosLosEmpleados(unEmpleado);
 
    // puts(unEmpleado.nombre);//con el punto despues de la variable se accede a cualquier variable
 
    return 7;
-}
-
-void mostrarEmpleado(eEmpleado unEmpleado)
-{
-  printf("%d-%s-%c-%f-$f\n", unEmpleado.legajo, unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
 }
 
 void ingresarEmpleado(eEmpleado lista[], int tam)
@@ -69,47 +64,26 @@ void ingresarEmpleado(eEmpleado lista[], int tam)
     }
 }
 
-void mostarTodosLosEmpleados(eEmpleado unEmpleado,int tam)
+void mostrarEmpleado(eEmpleado unEmpleado[], int tam)
 {
-   int i;
-   for(i=0; i<tam; i++)
+   if(tam==0)
    {
-     mostrarEmpleado(unEmpleado);
+     unEmpleado[tam];
    }
 }
 
-int inicializarEmpleado(lista[], int tam)
+void mostarTodosLosEmpleados(eEmpleado unEmpleado)
+{
+
+   printf(" Legajo: %d\n Nombre: %d\n Sexo: %c\n Sueldo B: %f\n Sueldo : %f\n", unEmpleado.legajo, unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
+}
+
+void inicializarEmpleado(eEmpleado lista[], int tam, int valor)
 {
   int i;
   for(i=0; i<tam; i++)
   {
-
-  }
-
-}
-
-int buscarLibre(lista[], int tam)
-{
-  int i;
-  for(i=0; i<tam; i++)
-  {
-
-  }
-
-}
-
-int buscarUno(lista[], int tam, int legajo)
-{
-  int i;
-  for(i=0; i<tam; i++)
-  {
-
+    lista[i].legajo = valor;
   }
 }
 
-int borrarUno(lista[], int tam, int legajo)
-{
-    buscarUno(lista,tam,legajo);
-
-
-}
