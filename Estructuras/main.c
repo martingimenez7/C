@@ -1,89 +1,55 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
+#include "empleados.h"
 
-#define T 2
-#define OCUPADO 1
-#define LIBRE 0
+#define T 10
 
-//diseña nuevo tipo de dato
-typedef struct //define tipo de dato
-{
-   int legajo;
-   char nombre[20];
-   char sexo;
-   float sueldoBruto;
-   float sueldoNeto;
-}eEmpleado;
-
-void ingresarEmpleado(eEmpleado[],int);
-void mostrarEmpleado(eEmpleado[],int);
-void mostarTodosLosEmpleados(eEmpleado);
-
-void inicializarEmpleado(eEmpleado[],int,int);
-int buscarLibre(eEmpleado[],int);
-
-int buscarUno(eEmpleado,int,int);//indice o -1
-int borrarUno(eEmpleado,int,int);
+int menuDeOpciones(char[]);
 
 int main()
 {
-    eEmpleado unEmpleado;
+    int opcion;
+
     eEmpleado lista[T];
-   // int indice;
+    eSector list[T];
+    inicializarEmpleados(lista,T);
+    //hardcodearDatosEmpleados(lista, list, 4);
 
-    ingresarEmpleado(lista,T);
-   // inicializarEmpleado(lista,T);
-    //mostrarEmpleado(unEmpleado);
-    //indice = buscarLibre(lista,T);
-    //lista[indice] = unEmpleado;
-
-    mostarTodosLosEmpleados(unEmpleado);
-
-   // puts(unEmpleado.nombre);//con el punto despues de la variable se accede a cualquier variable
-
-   return 7;
-}
-
-void ingresarEmpleado(eEmpleado lista[], int tam)
-{
-    int i;
-
-    for(i=0; i<tam; i++)
+    do
     {
-      printf(" Ingrese legajo: ");
-      scanf("%d", &lista[i].legajo);
-      printf(" Ingrese nombre: ");
-      fflush(stdin);
-      gets(lista[i].nombre);
-      printf(" Ingrese sexo: ");
-      scanf("%c", &lista[i].sexo);
-      printf(" Ingrese sueldo bruto: ");
-      scanf("%f", &lista[i].sueldoBruto);
-      lista[i].sueldoNeto = lista[i].sueldoBruto*0.85;
-    }
+        opcion = menuDeOpciones("\n 1.Alta\n 2.Baja\n 3.Modificar\n 4.Mostrar\n 5.Salir\n Elija una opcion: ");
+        switch(opcion)
+        {
+            case 1:
+                cargarEmpleado(lista, list,  T);
+            break;
+            //case 2:
+
+            //break;
+            case 3:
+                modificar(lista, list, T,1);
+            break;
+            case 4:
+                mostrarListaEmpleados(lista, list,  T);
+            break;
+            case 5:
+                printf("\n Saliendo...\nm ");
+            break;
+            default:
+                printf("\n Opcion incorrecta\n");
+            break;
+        }
+    }while(opcion!=5);
+
+    return 0;
 }
 
-void mostrarEmpleado(eEmpleado unEmpleado[], int tam)
+int menuDeOpciones(char mensaje[])
 {
-   if(tam==0)
-   {
-     unEmpleado[tam];
-   }
+    int opcion;
+    printf("%s", mensaje);
+    scanf("%d", &opcion);
+
+    return opcion;
 }
-
-void mostarTodosLosEmpleados(eEmpleado unEmpleado)
-{
-
-   printf(" Legajo: %d\n Nombre: %d\n Sexo: %c\n Sueldo B: %f\n Sueldo : %f\n", unEmpleado.legajo, unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
-}
-
-void inicializarEmpleado(eEmpleado lista[], int tam, int valor)
-{
-  int i;
-  for(i=0; i<tam; i++)
-  {
-    lista[i].legajo = valor;
-  }
-}
-
