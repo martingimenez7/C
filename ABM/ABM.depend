@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1555421285 source:c:\users\alumno\desktop\abm\empleado.c
-	"Empleado.h"
-
-1555421215 c:\users\alumno\desktop\abm\empleado.h
-	<stdio.h>
-	<string.h>
-
