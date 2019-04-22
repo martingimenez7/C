@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1555338642 source:c:\users\alumno\desktop\c-master\estructuras\main.c
-	<stdio.h>
+1555942319 source:c:\users\alumno\desktop\c-master\estructuras\main.c
 	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"empleados.h"
 
 1555701594 source:c:\users\marti\documents\github\c\estructuras\main.c
 	<stdlib.h>
@@ -16,6 +18,16 @@
 	<string.h>
 
 1555699060 c:\users\marti\documents\github\c\estructuras\empleados.h
+	<stdio.h>
+	<string.h>
+
+1555938530 source:c:\users\alumno\desktop\c-master\estructuras\empleados.c
+	"empleados.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1555942319 c:\users\alumno\desktop\c-master\estructuras\empleados.h
 	<stdio.h>
 	<string.h>
 

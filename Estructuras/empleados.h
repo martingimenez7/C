@@ -30,4 +30,7 @@ void inicializarEmpleados(eEmpleado[], int);
 void hardcodearDatosEmpleados(eEmpleado[], eSector[], int);
 
 int modificar(eEmpleado[], eSector[],int,int);
+int buscarMayor(eEmpleado[],int)
+int informar(eEmpleado[],eSector[], int);
+int mayorSueldo(eEmpleado[],int);
 //int borrar(eEmpleado[],int);

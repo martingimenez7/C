@@ -92,10 +92,10 @@ void hardcodearDatosEmpleados(eEmpleado lista[], eSector list[], int tam)
 {
     int i;
     int legajos[]={ 1 , 8 , 5 };
-    char nombres[][50]={" Maria "," Martin "," Jose "};
+    char nombres[][50]={" Maria "," Carlos "," Jose "};
     char apell[][50]={" Lopez "," Silva "," Martinez "};
     char sexo[]={'F','M','M'};
-    float sueldosBruto[]={1000,2000,3000};
+    float sueldosBruto[]={1000,30000,2000};
     char sect[][70]={" Recursos humanos "," Limpieza "," Gerente "};
     char descripcion[][100]={" Entrevistar a empledos "," Mantener la higiene "," Dirigir empresa "};
 
@@ -176,12 +176,73 @@ int modificar(eEmpleado lista[], eSector list[], int tam, int legajo)
    return loEncontro;
 }
 
+int informar(eEmpleado lista[], eSector list[] ,int tam)
+{
+    int i;
+    float maximo;
+
+    for(i=0; i<tam;i++)
+    {
+       if(nombre==lista[i].nombre);
+       {
+
+           if(sueldo==lista[i].sueldoBruto)
+           {
+
+           }
+       }
+    }
+
+
+    return ;
+}
+
+int mayorSueldo(eEmpleado lista[],int tam)
+{
+    int i;
+    float maximo;
+    int contadorCarlos=0;
+    maximo = buscarMayor(lista,tam);
+
+    for(i=0; i<tam; i++)
+    {
+      if(lista[i].estado==OCUPADO)
+      {
+        if(stricmp(lista[i].nombre," Carlos ")==0 && lista[i].sueldoBruto>20000)
+        {
+           contadorCarlos++;
+        }
+      }
+    }
+  return contadorCarlos;
+}
+
+int buscarMayor(eEmpleado lista[],int tam)
+{
+    float maximo;
+    int i;
+    int flag=0;
+
+    for(i=0; i<tam; i++)
+    {
+        if(lista[i].estado==OCUPADO)
+        {
+          if(flag==0 || lista[i].sueldoBruto>maximo)
+          {
+            maximo = lista[i].sueldoBruto;
+            flag = 1;
+            printf("maximo: %f\n" , maximo);
+          }
+        }
+    }
+    return maximo;
+}
 /*int borrar(eEmpleado lista[], int tam)
 {
     int i;
     int loEncontro=0;
     int legajo;
-    char respuesta[5];
+    int respuesta;
 
     printf(" Ingrese legajo: ");
     scanf("%d", &legajo);
@@ -190,23 +251,21 @@ int modificar(eEmpleado lista[], eSector list[], int tam, int legajo)
     {
         if(legajo == lista[i].legajo)
         {
-              printf(" Desea eliminar el legajo?(si-no): ");
-              fflush(stdin);
-              gets(respuesta);
+            printf(" Desea eliminar el legajo?(1(si)-2(no)): ");
 
-         switch(respuesta)
-         {
-             case 'si':
+            gets(respuesta);
+
+            switch(respuesta)
+            {
+              case 1:
                    printf(" Borrado completado");
-
-                 loEncontro=1;
-             break;
-             case 'no':
+                   loEncontro=1;
+              break;
+              case 2:
                  printf(" Saliendo");
-
                  loEncontro=1;
-             break;
-         }
+              break;
+            }
         }
     }
 

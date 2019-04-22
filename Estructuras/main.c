@@ -14,19 +14,19 @@ int main()
     eEmpleado lista[T];
     eSector list[T];
     inicializarEmpleados(lista,T);
-    //hardcodearDatosEmpleados(lista, list, 4);
+    hardcodearDatosEmpleados(lista, list, 4);
 
     do
     {
-        opcion = menuDeOpciones("\n 1.Alta\n 2.Baja\n 3.Modificar\n 4.Mostrar\n 5.Salir\n Elija una opcion: ");
+        opcion = menuDeOpciones("\n 1.Alta\n 2.Baja\n 3.Modificar\n 4.Mostrar\n 5.Informar\n 6.Salir\n Elija una opcion: ");
         switch(opcion)
         {
             case 1:
                 cargarEmpleado(lista, list,  T);
             break;
-            //case 2:
-
-            //break;
+           /* case 2:
+                borrar(lista,T);
+            break;*/
             case 3:
                 modificar(lista, list, T,1);
             break;
@@ -34,13 +34,16 @@ int main()
                 mostrarListaEmpleados(lista, list,  T);
             break;
             case 5:
+                informar(lista,list, T);
+            break;
+            case 6:
                 printf("\n Saliendo...\nm ");
             break;
             default:
                 printf("\n Opcion incorrecta\n");
             break;
         }
-    }while(opcion!=5);
+    }while(opcion!=6);
 
     return 0;
 }
