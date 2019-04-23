@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-void cargarEmpleado(eEmpleado lista[], int tam)
+void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[], int ts)
 {
-    int i;
+    int i,j;
 
     i = buscarLibre(lista, tam);
     if(i!=-1)
@@ -25,18 +25,22 @@ void cargarEmpleado(eEmpleado lista[], int tam)
         fflush(stdin);
         scanf("%c", &lista[i].sexo);
 
-        printf(" Ingrese sueldo bruto: ");
-        scanf("%f", &lista[i].sueldoBruto);
+        for(j=0; j<ts; j++)
+        {
+            printf(" %d.%s\n",sectores[j].idSector,sectores[j].sector);
+        }
+        printf(" Elija sector: ");
+        scanf("%d", &lista[i].idSector);
 
-        lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
+        printf("Ingrese cantidad de horas: ");
+        scanf("%d", &lista[i].cantidadHoras);
 
-        printf(" Ingrese sector: ");
-        fflush(stdin);
-        gets(lista[i].seccion.sector);
+        if(lista[i].idSector==sectores[j].idSector)
+        {
+           lista[i].valorHora = sectores[j].valor;
+        }
 
-        printf(" Descripcion del sector: ");
-        fflush(stdin);
-        gets(lista[i].seccion.descp);
+        lista[i].sueldoBruto = lista[i].cantidadHoras;
 
         lista[i].estado = OCUPADO;
 
@@ -47,21 +51,33 @@ void cargarEmpleado(eEmpleado lista[], int tam)
     }
 }
 
-void mostrarListaEmpleados(eEmpleado lista[], int tam)
+void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int ts)
 {
     int i;
     for(i=0; i<tam; i++)
     {
         if(lista[i].estado!=LIBRE)
         {
-            mostrarEmpleado(lista[i]);
+            mostrarEmpleado(lista[i], sectores, ts);
         }
     }
 }
 
-void mostrarEmpleado(eEmpleado unEmpleado)
+void mostrarEmpleado(eEmpleado unEmpleado, eSector sectores[], int ts)
 {
-    printf("\n%d - %s - %s - %c - %f - %f - %s - %s\n\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.apellido, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto,unEmpleado.seccion.sector,unEmpleado.seccion.descp);
+    char descripcionSector[20];
+    int i;
+
+    for(i=0; i<ts; i++)
+    {
+        if(unEmpleado.idSector == sectores[i].idSector)
+        {
+            strcpy(descripcionSector, sectores[i].sector);
+            break;
+        }
+    }
+
+    printf("\n%d - %s - %s - %c - %f - %f - %s\n\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.apellido, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto,descripcionSector);
 }
 
 int buscarLibre(eEmpleado lista[], int tam)
@@ -91,13 +107,12 @@ void inicializarEmpleados(eEmpleado lista[], int tam)
 void hardcodearDatosEmpleados(eEmpleado lista[],int tam)
 {
     int i;
-    int legajos[]={ 1 , 8 , 5 };
-    char nombres[][50]={"Maria","Carlos","Jose"};
-    char apell[][50]={"Lopez","Silva","Martinez"};
-    char sexo[]={'F','M','M'};
-    float sueldosBruto[]={1000,30000,2000};
-    char sect[][70]={"Recursos humanos","Limpieza","Gerente"};
-    char descripcion[][100]={"Entrevistar a empledos"," Mantener la higiene","Dirigir empresa"};
+    int legajos[]={ 1 , 8 , 5 , 9 , 3 };
+    char nombres[][50]={"Maria","Carlos","Jose","Camila","Marcelo"};
+    char apell[][50]={"Lopez","Silva","Martinez","Poli","Araujo"};
+    char sexo[]={'F','M','M','F','M'};
+    float sueldosBruto[]={10000,30000,20000,40000,50000};
+    int sector[]={1,2,3,1,2};
 
     for(i=0; i<tam; i++)
     {
@@ -108,12 +123,11 @@ void hardcodearDatosEmpleados(eEmpleado lista[],int tam)
         lista[i].sueldoBruto = sueldosBruto[i];
         lista[i].sueldoNeto = sueldosBruto[i] * 0.85;
         lista[i].estado = OCUPADO;
-        strcpy(lista[i].seccion.sector, sect[i]);
-        strcpy(lista[i].seccion.descp, descripcion[i]);
+        lista[i].idSector = sector[i];
     }
 }
 
-int modificar(eEmpleado lista[],int tam)
+int modificar(eEmpleado lista[],int tam, eSector sectores[])
 {
    int i;
    int loEncontro=0;
@@ -127,7 +141,7 @@ int modificar(eEmpleado lista[],int tam)
    {
        if(legajo == lista[i].legajo)
        {
-           opcion = menuDeOpciones("\n 1.Nombre\n 2.Apellido\n 3.Sector\n 4.Sueldo\n Ingrese opcion a modificar: ");
+           opcion = menuDeOpciones("\n 1.Nombre\n 2.Apellido\n 3.Sector\n 4.Carga horaria\n Ingrese opcion a modificar: ");
            switch(opcion)
            {
                case 1:
@@ -146,18 +160,21 @@ int modificar(eEmpleado lista[],int tam)
                break;
                case 3:
                    printf(" Ingrese nuevo sector: ");
-                   fflush(stdin);
-                   gets(lista[i].seccion.sector);
-                   printf(" Descripcion del sector: ");
-                   fflush(stdin);
-                   gets(lista[i].seccion.descp);
+                   printf("\n%d.%s\n",sectores[i].idSector,sectores[i].sector);
+                   scanf("%d", &lista[i].idSector);
 
                    loEncontro = 1;
                break;
                case 4:
-                   printf(" Ingrese nuevo sueldo: ");
-                   scanf("%f", &lista[i].sueldoBruto);
-                   lista[i].sueldoNeto = lista[i].sueldoBruto*0.85;
+                   printf("\n Ingrese nueva carga horaria: ");
+                   scanf("%d", &lista[i].cantidadHoras);
+
+                   if(lista[i].idSector==sectores[i].idSector)
+                   {
+                     lista[i].valorHora = sectores[i].valor;
+                   }
+
+                   lista[i].sueldoBruto = lista[i].cantidadHoras;
 
                    loEncontro = 1;
                break;
@@ -166,12 +183,14 @@ int modificar(eEmpleado lista[],int tam)
                       system("cls");
                break;
            }
+           system("cls");
            break;//modificar
        }
    }
 
    if(loEncontro==0)
    {
+       system("cls");
        printf("\n El dato no existe\n");
    }
 
@@ -192,7 +211,7 @@ int borrar(eEmpleado lista[], int tam)
         if(legajo == lista[i].legajo)
         {
             system("cls");
-            printf(" Borrado completo");
+            printf("\n Borrado completo\n");
             lista[i].estado = LIBRE;
             loEncontro = 1;
             break;

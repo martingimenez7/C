@@ -31,3 +31,19 @@
 	<stdio.h>
 	<string.h>
 
+1556031431 source:c:\users\alumno\downloads\c-master\estructuras\empleados.c
+	"empleados.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1556029194 c:\users\alumno\downloads\c-master\estructuras\empleados.h
+	<stdio.h>
+	<string.h>
+
+1556031431 source:c:\users\alumno\downloads\c-master\estructuras\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"empleados.h"
+

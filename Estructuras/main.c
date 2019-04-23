@@ -3,7 +3,7 @@
 #include <string.h>
 #include "empleados.h"
 
-#define T 10
+#define T 5
 
 int menuDeOpciones(char[]);
 
@@ -12,8 +12,8 @@ int main()
     int opcion;
     eEmpleado lista[T];
     inicializarEmpleados(lista,T);
-    hardcodearDatosEmpleados(lista, 3);
-    //eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
+    hardcodearDatosEmpleados(lista, 5);
+    eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
 
     do
     {
@@ -21,18 +21,18 @@ int main()
         switch(opcion)
         {
             case 1:
-                cargarEmpleado(lista, T);
+                cargarEmpleado(lista, T, sectores, 3);
                 system("cls");
             break;
             case 2:
                 borrar(lista,T);
             break;
             case 3:
-                modificar(lista,T);
+                modificar(lista,T,sectores);
             break;
             case 4:
                 system("cls");
-                mostrarListaEmpleados(lista, T);
+                mostrarListaEmpleados(lista, T, sectores, 3);
             break;
             case 5:
                 system("cls");
@@ -40,6 +40,7 @@ int main()
                 printf("\n La cantidad de carlos es: %d\n", contarCarlos(lista,T));
             break;
             case 6:
+                system("cls");
                 printf("\n Saliendo...\n ");
             break;
             default:
@@ -49,7 +50,7 @@ int main()
         }
     }while(opcion!=6);
 
-    return 0;
+    return 7;
 }
 
 int menuDeOpciones(char mensaje[])
