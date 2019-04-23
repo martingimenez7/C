@@ -1,4 +1,4 @@
-
+#include <string.h>
 #include "Empleado.h"
 
 
@@ -101,8 +101,6 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
     float sueldosBruto[]= {22000,22000,15000,4000,21000,6000};
     int sector[]={1,2,3,1,2,2};
 
-    eFecha unaFecha = {22,04,2019};
-
     for(i=0; i<tam; i++)
     {
         lista[i].legajo = legajos[i];
@@ -133,8 +131,6 @@ void modificar(eEmpleado lista[], int tam, int legajo)
     {
         if(legajo == lista[i].legajo)
         {
-
-
             printf("Ingrese un nuevo sueldo bruto: ");
             scanf("%f", &lista[i].sueldoBruto);
 
@@ -211,6 +207,7 @@ float buscarSueldoMaximo(eEmpleado lista[], int tam)
     return maximo;
 
 }
+
 void mostrarEmpleadosSueldoMaximo(eEmpleado lista[], int tam)
 {
     float maximo;
@@ -247,12 +244,3 @@ int contarCarlos(eEmpleado lista[], int tam)
 
     return contadorCarlos;
 }
-
-
-
-int buscarLegajo(eEmpleado lista[], int tam, int legajo)
-{
-
-}
-
-

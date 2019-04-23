@@ -6,6 +6,14 @@
 
 typedef struct
 {
+    int idSector;
+    char sector[50];
+    char descp[70];
+    float valor;
+}eSector;
+
+typedef struct
+{
     int legajo;
     char nombre[20];
     char apellido[30];
@@ -13,24 +21,21 @@ typedef struct
     float sueldoBruto;
     float sueldoNeto;
     int estado;
+
+    int idSector;
+    eSector seccion;
 }eEmpleado;
 
-typedef struct
-{
-    char sector[50];
-    char descp[70];
-}eSector;
-
-void cargarEmpleado(eEmpleado[],eSector[], int);
-void mostrarEmpleado(eEmpleado,eSector);
-void mostrarListaEmpleados(eEmpleado[], eSector[], int);
+void cargarEmpleado(eEmpleado[],int);
+void mostrarEmpleado(eEmpleado);
+void mostrarListaEmpleados(eEmpleado[],int);
 
 int buscarLibre(eEmpleado[], int);
 void inicializarEmpleados(eEmpleado[], int);
-void hardcodearDatosEmpleados(eEmpleado[], eSector[], int);
+void hardcodearDatosEmpleados(eEmpleado[],int);
+int modificar(eEmpleado[],int);
+int borrar(eEmpleado[],int);
 
-int modificar(eEmpleado[], eSector[],int,int);
-int buscarMayor(eEmpleado[],int)
-int informar(eEmpleado[],eSector[], int);
-int mayorSueldo(eEmpleado[],int);
-//int borrar(eEmpleado[],int);
+float buscarSueldoMaximo(eEmpleado[],int);
+void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
+int contarCarlos(eEmpleado[],int);

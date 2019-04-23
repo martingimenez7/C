@@ -9,3 +9,14 @@
 1555945237 source:c:\users\alumno\desktop\abm\empleado.c
 	"Empleado.h"
 
+1555969565 source:c:\users\marti\documents\github\c\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+
+1555976511 c:\users\marti\documents\github\c\abm\empleado.h
+	<stdio.h>
+
+1555976775 source:c:\users\marti\documents\github\c\abm\empleado.c
+	<string.h>
+	"Empleado.h"
+

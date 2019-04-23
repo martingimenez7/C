@@ -5,15 +5,7 @@
 
 typedef struct
 {
-    int dia;
-    int mes;
-    int anio;
-}eFecha;
-
-typedef struct
-{
     int idSector;
-
     char descripcion[20];
      float valor;
 
@@ -54,7 +46,6 @@ void borrarEmpleado(eEmpleado[], int, int);
 float buscarSueldoMaximo(eEmpleado[],int);
 void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
 int contarCarlos(eEmpleado[],int);
-
 
 
 

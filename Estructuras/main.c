@@ -10,11 +10,10 @@ int menuDeOpciones(char[]);
 int main()
 {
     int opcion;
-
     eEmpleado lista[T];
-    eSector list[T];
     inicializarEmpleados(lista,T);
-    hardcodearDatosEmpleados(lista, list, 4);
+    hardcodearDatosEmpleados(lista, 3);
+    //eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
 
     do
     {
@@ -22,24 +21,29 @@ int main()
         switch(opcion)
         {
             case 1:
-                cargarEmpleado(lista, list,  T);
+                cargarEmpleado(lista, T);
+                system("cls");
             break;
-           /* case 2:
+            case 2:
                 borrar(lista,T);
-            break;*/
+            break;
             case 3:
-                modificar(lista, list, T,1);
+                modificar(lista,T);
             break;
             case 4:
-                mostrarListaEmpleados(lista, list,  T);
+                system("cls");
+                mostrarListaEmpleados(lista, T);
             break;
             case 5:
-                informar(lista,list, T);
+                system("cls");
+                mostrarEmpleadosSueldoMaximo(lista,T);
+                printf("\n La cantidad de carlos es: %d\n", contarCarlos(lista,T));
             break;
             case 6:
-                printf("\n Saliendo...\nm ");
+                printf("\n Saliendo...\n ");
             break;
             default:
+                system("cls");
                 printf("\n Opcion incorrecta\n");
             break;
         }
