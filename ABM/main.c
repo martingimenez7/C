@@ -2,31 +2,18 @@
 #include <stdlib.h>
 #include "Empleado.h"
 
-#define T 10
-
+#define T 6
 
 int menuDeOpciones(char[]);
 
-/*
-Informes:
-
-1- EL/LOS Empleados con mayor sueldo.
-2- Cantidad de empleados que se llamen carlos y ganen mas de 20000
-*/
-
 int main()
 {
-
-    int indice;
     int opcion;
 
     eEmpleado lista[T];
     inicializarEmpleados(lista,T);
 
     eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
-
-
-
 
 hardcodearDatosEmpleados(lista,6);
     do
@@ -35,7 +22,7 @@ hardcodearDatosEmpleados(lista,6);
         switch(opcion)
         {
             case 1:
-                cargarEmpleado(lista,  T);
+                cargarEmpleado(lista, T, sectores, 3);
 
             break;
             case 2:
@@ -56,16 +43,8 @@ hardcodearDatosEmpleados(lista,6);
 
                 break;
 
-
         }
     }while(opcion!=10);
-
-
-
-    //inicializarEmpleados(lista, T);
-
-
-
 
     return 0;
 }
