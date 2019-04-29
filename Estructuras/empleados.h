@@ -8,8 +8,16 @@ typedef struct
 {
     int idSector;
     char sector[50];
+    char descripcion[50];
     float valor;
 }eSector;
+
+typedef struct
+{
+    int idSector;
+    int contadorEmpleados;
+    char descripcion[50];
+}eAuxiliar;
 
 typedef struct
 {
@@ -23,7 +31,7 @@ typedef struct
     int estado;
     float valorHora;
     int idSector;
-    eSector seccion;
+
 }eEmpleado;
 
 void cargarEmpleado(eEmpleado[],int,eSector[],int);
@@ -39,3 +47,6 @@ int borrar(eEmpleado[],int);
 float buscarSueldoMaximo(eEmpleado[],int);
 void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
 int contarCarlos(eEmpleado[],int);
+
+void mostrarEmpleadosPorSector(eSector[],int,eEmpleado[],int);
+void mostrarSectorConMasEmpleados(eSector[],int,eEmpleado[],int);
