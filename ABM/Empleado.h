@@ -12,6 +12,13 @@ typedef struct
 
 typedef struct
 {
+    int idSector;
+    int contadorEmpleados;
+    char descripcion[50];
+}eAuxiliar;
+
+typedef struct
+{
     int legajo;
     char nombre[20];
     char sexo;
@@ -38,3 +45,8 @@ void borrarEmpleado(eEmpleado[], int, int);
 float buscarSueldoMaximo(eEmpleado[],int);
 void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
 int contarCarlos(eEmpleado[],int);
+
+void mostrarEmpleadosPorSector(eSector[],int,eEmpleado[],int);
+void mostrarSectorConMasEmpleados(eSector[],int,eEmpleado[],int);
+
+void promedioDeSueldos(eEmpleado[],int);

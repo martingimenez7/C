@@ -31,3 +31,14 @@
 	<stdlib.h>
 	"Empleado.h"
 
+1556548980 source:c:\users\alumno\desktop\c-master\abm\empleado.c
+	<string.h>
+	"Empleado.h"
+
+1556547532 c:\users\alumno\desktop\c-master\abm\empleado.h
+	<stdio.h>
+
+1556544103 source:c:\users\alumno\desktop\c-master\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+

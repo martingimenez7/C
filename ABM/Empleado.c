@@ -233,3 +233,79 @@ int contarCarlos(eEmpleado lista[], int tam)
 
     return contadorCarlos;
 }
+
+void mostrarEmpleadosPorSector(eSector sectores[], int ts, eEmpleado empleados[], int te)
+{
+   int i,j;
+
+   for(i=0; i<ts; i++)
+   {
+       printf("%s: \n\n", sectores[i].descripcion);
+       for(j=0; j<te; j++)
+       {
+           if(sectores[i].idSector==empleados[j].idSector)
+           {
+               mostrarEmpleado(empleados[j],sectores,ts);
+           }
+       }
+   }
+
+}
+
+void mostrarSectorConMasEmpleados(eSector sectores[], int ts, eEmpleado empleados[], int te)
+{
+    eAuxiliar auxiliar[3];
+    int i,j;
+    int maximo=0;
+    int flag=0;
+
+    for(i=0; i<ts; i++)
+    {
+        auxiliar[i].idSector = sectores[i].idSector;
+        strcpy(auxiliar[i].descripcion, sectores[i].descripcion);
+        auxiliar[i].contadorEmpleados = 0;
+    }
+
+    for(i=0; i<ts; i++)
+    {
+       for(j=0; j<te; j++)
+       {
+           if(auxiliar[i].idSector==empleados[j].idSector)
+           {
+               auxiliar[i].contadorEmpleados++;
+           }
+       }
+    }
+
+    for(i=0; i<ts; i++)
+    {
+       if(flag=0 || auxiliar[i].contadorEmpleados>maximo)
+       {
+           maximo = auxiliar[i].contadorEmpleados;
+           flag = 1;
+       }
+    }
+
+    for(i=0; i<ts; i++)
+    {
+      if(auxiliar[i].contadorEmpleados == maximo)
+      {
+          printf("%s\n", auxiliar[i].descripcion);
+      }
+    }
+
+   /*for(i=0;i<ts; i++)
+   {
+       printf("\n%d--%d\n\n",auxiliar[i].idSector, auxiliar[i].contadorEmpleados);
+   }*/
+}
+
+void promedioDeSueldos(eEmpleado empleados[], int te)
+{
+    int i;
+
+    for(i=0; i<te; i++)
+    {
+
+    }
+}
