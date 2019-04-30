@@ -36,8 +36,13 @@ int main()
             break;
             case 5:
                 system("cls");
-                mostrarEmpleadosSueldoMaximo(lista,T);
-                printf("\n La cantidad de carlos es: %d\n", contarCarlos(lista,T));
+                //mostrarEmpleadosSueldoMaximo(lista,T);
+                //printf("\n La cantidad de carlos es: %d\n", contarCarlos(lista,T));
+                printf(" Empleados por sector:\n");
+                mostrarEmpleadosPorSector(sectores,3,lista,T);
+                printf(" Sector con mas empleados: \n");
+                mostrarSectorConMasEmpleados(sectores,3,lista,T);
+
             break;
             case 6:
                 system("cls");

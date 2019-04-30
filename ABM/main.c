@@ -23,26 +23,24 @@ hardcodearDatosEmpleados(lista,6);
         {
             case 1:
                 cargarEmpleado(lista, T, sectores, 3);
-
             break;
             case 2:
                 borrarEmpleado(lista, T, 3);
                 break;
             case 3:
-
                 modificar(lista, T, 3);
             break;
-
             case 4:
                 mostrarListaEmpleados(lista, T, sectores, 3);
                 break;
             case 5:
-
                 mostrarEmpleadosSueldoMaximo(lista,T);
-                printf("La cantidad de carlos es: %d\n", contarCarlos(lista,T));
-
-                break;
-
+                printf("\nLa cantidad de carlos es: %d\n\n", contarCarlos(lista,T));
+                printf(" Empleados por sector:\n");
+                mostrarEmpleadosPorSector(sectores,3,lista,T);
+                printf(" Sector con mas empleados: \n");
+                mostrarSectorConMasEmpleados(sectores,3,lista,T);
+            break;
         }
     }while(opcion!=10);
 

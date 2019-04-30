@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1555942319 source:c:\users\alumno\desktop\c-master\estructuras\main.c
+1556549244 source:c:\users\alumno\desktop\c-master\estructuras\main.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -21,13 +21,13 @@
 	<stdio.h>
 	<string.h>
 
-1555938530 source:c:\users\alumno\desktop\c-master\estructuras\empleados.c
+1556549368 source:c:\users\alumno\desktop\c-master\estructuras\empleados.c
 	"empleados.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1555942319 c:\users\alumno\desktop\c-master\estructuras\empleados.h
+1556549493 c:\users\alumno\desktop\c-master\estructuras\empleados.h
 	<stdio.h>
 	<string.h>
 
