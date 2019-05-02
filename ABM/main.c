@@ -40,6 +40,7 @@ hardcodearDatosEmpleados(lista,6);
                 mostrarEmpleadosPorSector(sectores,3,lista,T);
                 printf(" Sector con mas empleados: \n");
                 mostrarSectorConMasEmpleados(sectores,3,lista,T);
+                //promedioDeSueldos(lista,T);
             break;
         }
     }while(opcion!=10);

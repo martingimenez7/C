@@ -49,4 +49,4 @@ int contarCarlos(eEmpleado[],int);
 void mostrarEmpleadosPorSector(eSector[],int,eEmpleado[],int);
 void mostrarSectorConMasEmpleados(eSector[],int,eEmpleado[],int);
 
-void promedioDeSueldos(eEmpleado[],int);
+//void promedioDeSueldos(eEmpleado[],int);

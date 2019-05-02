@@ -300,12 +300,18 @@ void mostrarSectorConMasEmpleados(eSector sectores[], int ts, eEmpleado empleado
    }*/
 }
 
-void promedioDeSueldos(eEmpleado empleados[], int te)
+/*void promedioDeSueldos(eEmpleado lista[], int te)
 {
     int i;
+    float contadorSueldo;
 
     for(i=0; i<te; i++)
     {
-
+      if(lista[i].estado==OCUPADO)
+      {
+          lista[i].sueldoBruto = contadorSueldo;
+          break;
+      }
     }
-}
+
+}*/
