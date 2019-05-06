@@ -11,16 +11,11 @@ void cargar(eStructName lista[], int tam, eStructName tira[], int tx)
     i = buscarLibre(lista, tam);
     if(i!=-1)
     {
-        printf(" \n Ingrese legajo: ");
-        scanf("%d", &lista[i].legajo);
+        lista[i].id = numeroAleatorio(+1,+999,isEmpty);
 
-        printf(" Ingrese nombre: ");
-        fflush(stdin);
-        gets(lista[i].nombre);
+        getStringLetras("\n Ingrese name: \n", lista[i].name);
 
-        printf(" Ingrese apellido: ");
-        fflush(stdin);
-        gets(lista[i].apellido);
+        getStringLetras(" Ingrese lastName: \n", lista[i].lastName);
 
         printf(" Ingrese sexo: ");
         fflush(stdin);
@@ -355,5 +350,90 @@ void ordenar(eStructName lista[],int tam)
         }
     }
 }
+
+ while(apellidoNombre[i]!= '\0')
+   {
+       if(isspace(apellidoNombre[i])/*detecta espacio*/)
+       {
+           apellidoNombre[i+1] = toupper(apellidoNombre[i+1]);
+       }
+
+       i++;
+}
+
+void validarTamCadena(char mensajeError[], char cadena[], int tam)
+{
+    while(strlen(cadena)>tam)
+    {
+        printf(" Reingrese %s", mensajeError);
+        fflush(stdin);
+        scanf("%[^\n]", cadena);
+    }
+
+}
+
+char getChar(char mensaje[])
+{
+    char auxiliar;
+    printf("%s",mensaje);
+    fflush(stdin);
+    scanf("%c",&auxiliar);
+    return auxiliar;
+}
+
+void getString(char mensaje[],char input[])
+{
+    printf("%s",mensaje);
+    scanf ("%s", input);
+}
+
+int getStringLetras(char mensaje[],char input[])
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esSoloLetras(aux))
+    {
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
+}
+
+int getStringNumeros(char mensaje[],char input[])
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esNumerico(aux))
+    {
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
+}
+
+int esSoloLetras(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+           return 0;
+       i++;
+   }
+   return 1;
+}
+
+int esNumerico(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if(str[i] < '0' || str[i] > '9')
+           return 0;
+       i++;
+   }
+   return 1;
+}
+
 
 
