@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1557108974 source:c:\users\marti\documents\github\c\funciones7\calculos.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1557714380 source:c:\users\marti\documents\github\c\martingimenez1ºcparcial1\martingimenezparcial1\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"Biblioteca.h"
+
+1557715419 c:\users\marti\documents\github\c\martingimenez1ºcparcial1\martingimenezparcial1\biblioteca.h
+
+1557715214 source:c:\users\marti\documents\github\c\martingimenez1ºcparcial1\martingimenezparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
+1557704364 c:\users\marti\documents\github\c\martingimenez1ºcparcial1\martingimenezparcial1\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"Biblioteca.h"
+
