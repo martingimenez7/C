@@ -279,7 +279,7 @@ void ordenar(ePeliculas lista[],int tam)
             {
                 continue;
             }
-            if(strcmp(lista[i].actor.pais ,lista[j].actor.pais ) < 0)
+            if(strcmp(lista[i].actor.pais ,lista[j].actor.pais ) > 0)
             {
                 auxiliar = lista[j];
                 lista[j] = lista[i];
