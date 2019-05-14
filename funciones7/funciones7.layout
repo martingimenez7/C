@@ -2,40 +2,6 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Estructura.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9124" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="50" />
-			<Collapse line="62" />
-			<Collapse line="79" />
-			<Collapse line="94" />
-			<Collapse line="103" />
-			<Collapse line="128" />
-			<Collapse line="198" />
-			<Collapse line="227" />
-			<Collapse line="248" />
-			<Collapse line="265" />
-			<Collapse line="284" />
-			<Collapse line="293" />
-			<Collapse line="327" />
-			<Collapse line="354" />
-			<Collapse line="364" />
-			<Collapse line="375" />
-			<Collapse line="384" />
-			<Collapse line="390" />
-			<Collapse line="402" />
-			<Collapse line="414" />
-			<Collapse line="426" />
-		</Folding>
-	</File>
 	<File name="Calculos.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2293" topLine="0" />
@@ -45,5 +11,18 @@
 			<Collapse line="19" />
 			<Collapse line="29" />
 		</Folding>
+	</File>
+	<File name="main.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7492" topLine="307" />
+		</Cursor>
+		<Folding>
+			<Collapse line="7" />
+		</Folding>
+	</File>
+	<File name="Estructura.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="218" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

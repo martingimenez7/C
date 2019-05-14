@@ -48,6 +48,7 @@ void hardcodearDatos(ePeliculas[],int);
 void mostrarLista(ePeliculas[],int,eGenero[],int,eActores[],int);
 void mostrar(ePeliculas,eGenero[],int,eActores[],int);
 int menuDeOpciones(char[]);
-void ordenar(ePeliculas[],int);
+void ordenar(int,eActores[]);
+void mostrarActoresPorPais(eActores[],int);
 
 

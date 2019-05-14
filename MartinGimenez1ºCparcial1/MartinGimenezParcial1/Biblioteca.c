@@ -218,7 +218,6 @@ void mostrarLista(ePeliculas lista[], int tam, eGenero tira[], int tg, eActores 
     {
         if(lista[i].estado!=LIBRE)
         {
-            ordenar(lista,tam);
             mostrar(lista[i],tira,tg,actores,ta);
         }
     }
@@ -262,33 +261,40 @@ int menuDeOpciones(char mensaje[])
     return opcion;
 }
 
-void ordenar(ePeliculas lista[],int tam)
+void ordenar(int tam,eActores actor[])
 {
    int i,j;
-   ePeliculas auxiliar;
+   eActores auxiliar;
 
     for(i=0; i < tam - 1; i++)
     {
-        if(lista[i].estado == LIBRE)
-        {
-            continue;
-        }
+
         for(j=i+1; j < tam; j++)
         {
-            if(lista[j].estado == LIBRE)
+
+            if(strcmp(actor[i].pais ,actor[j].pais ) > 0)
             {
-                continue;
-            }
-            if(strcmp(lista[i].actor.pais ,lista[j].actor.pais ) > 0)
-            {
-                auxiliar = lista[j];
-                lista[j] = lista[i];
-                lista[i] = auxiliar;
+                auxiliar = actor[j];
+                actor[j] = actor[i];
+                actor[i] = auxiliar;
             }
         }
     }
 }
 
+void mostrarActoresPorPais(eActores actores[], int ta, ePeliculas lista[], int tp)
+{
+    int i,j;
+
+  for(i=0; i<ta; i++)
+  {
+     for(j=0; j<tp; j++)
+     {
+              ordenar(ta,actores);
+              printf("\n %s - %s \n\n",actores[j].nombre,actores[j].pais);
+     }
+  }
+}
 
 
 

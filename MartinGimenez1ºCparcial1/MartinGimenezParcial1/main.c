@@ -29,8 +29,7 @@ int main()
             break;
             case 4:
                 system("cls");
-                //ordenar(actores,10,lista);
-                mostrarLista(lista,T,generos,5,actores,10);
+                mostrarActoresPorPais(actores,10);
             break;
             case 5:
                 system("cls");
