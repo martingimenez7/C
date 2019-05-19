@@ -59,7 +59,6 @@ int valor(int numeros[],int tam,int indice)
     return indice;
 }
 
-
 void ordenarVector(int numeros[],int tam)
 {
     int i,j,aux;
