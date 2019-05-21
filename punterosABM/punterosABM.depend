@@ -3,3 +3,15 @@
 	<stdio.h>
 	<stdlib.h>
 
+1558402325 source:c:\users\marti\documents\github\c\punterosabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"BibliotecaP.h"
+
+1558401464 c:\users\marti\documents\github\c\punterosabm\bibliotecap.h
+
+1558402258 source:c:\users\marti\documents\github\c\punterosabm\bibliotecap.c
+	<stdio.h>
+	<stdlib.h>
+	"BibliotecaP.h"
+
