@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1558449695 source:c:\users\alumno\desktop\memoriadinamica\bibliotecamd.c
+	<stdio.h>
+	<stdlib.h>
+	"bibliotecaMD.h"
+
+1558448719 c:\users\alumno\desktop\memoriadinamica\bibliotecamd.h
+
+1558449476 source:c:\users\alumno\desktop\memoriadinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bibliotecaMD.h"
+
