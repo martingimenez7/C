@@ -23,10 +23,10 @@ void cargar(int* pNumero,int tam)
 
        if(aux!=NULL)
        {
-           pNumero = aux;
+            pNumero = aux;
 
             for(i=0;i<tam+5;i++)
-             {
+            {
                 printf("\n Ingrese un numero: ");
                 scanf("%d",pNumero[i]);
             }

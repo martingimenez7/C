@@ -7,13 +7,9 @@
 int main()
 {
     int* pNumero;
-
-    pNumero = (int*) malloc(sizeof(int)*5);
     ///Multiplico por la cant. de elementos(5)
 
     cargar(pNumero,T);
-
-    pNumero = (int*)realloc(pNumero,sizeof(int)*10);
     ///Reasigna espacio en memoria
     ///Devuelve NULL si no hay espacio
 
