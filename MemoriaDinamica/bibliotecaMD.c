@@ -17,8 +17,35 @@ void cargar(int* pNumero,int tam)
            printf(" Ingrese un numero: ");
            scanf("%d",pNumero+i);
        }
+
        mostrar(pNumero,tam);
-       aux = (int*)realloc(pNumero,sizeof(int)*10);
+       aux = (int*) realloc(pNumero,sizeof(int)*(tam+5));
+
+       if(aux!=NULL)
+       {
+           pNumero = aux;
+
+            for(i=0;i<tam+5;i++)
+             {
+                printf("\n Ingrese un numero: ");
+                scanf("%d",pNumero[i]);
+            }
+            for(i=0;i<tam+5;i++)
+            {
+                printf("\n %d", *(pNumero+i));
+            }
+
+            pNumero = (int*) realloc(pNumero,sizeof(int)*4);///Achicamos
+
+            for(i=0;i<tam+5;i++)
+            {
+                printf("\n %d", *(pNumero+i));
+            }
+       }else
+       {
+           printf(" No hay espacio suficiente");
+       }
+
     ///Reasigna espacio en memoria
     ///Devuelve NULL si no hay espacio
     }

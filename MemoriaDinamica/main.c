@@ -7,7 +7,6 @@
 int main()
 {
     int* pNumero;
-    int i;
 
     pNumero = (int*) malloc(sizeof(int)*5);
     ///Multiplico por la cant. de elementos(5)
@@ -18,23 +17,6 @@ int main()
     ///Reasigna espacio en memoria
     ///Devuelve NULL si no hay espacio
 
-    system("cls");
-
-    if(pNumero!=NULL)
-    {
-       for(i=0;i<5;i++)
-       {
-         printf(" Ingrese un numero: ");
-         scanf("%d",pNumero+i);
-       }
-    }else if(pNumero==NULL)
-    {
-        printf(" Error");
-    }
-
-    system("cls");
-
-    mostrar(pNumero,10);
 
     //pNumero = (int*) malloc(sizeof(int));
     ///Devuelve un puntero de cualquier tipo. Si no encuentra espacio, devuelve NULL
